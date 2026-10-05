@@ -1,0 +1,1 @@
+export default function StrictGlyphs(){return <main className="wide"><h1>Strict V4 glyphs</h1><p>🧾 proof dossier</p><p>📚⚖️ law catalog</p><p>🔏 certificate</p><p>🎯 target</p><p>🚪 execution gate</p><p>🪪 identity</p><p>📐 formatting</p><p>🧊 mutability</p><p>🧮 complexity</p><p>🧪 test witness</p><p>👑 owned</p><p>🤝 borrowed</p><p>👁️ observed</p><p>✍️ mutation</p><p>🌀 effects</p></main>}
