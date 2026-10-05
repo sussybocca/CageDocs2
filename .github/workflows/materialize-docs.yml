@@ -3,7 +3,8 @@ name: Materialize CageDocs2 workspace
 on:
   push:
     paths:
-      - '.bootstrap/CageDocs2-bootstrap.tar.xz'
+      - '.bootstrap/chunks/**'
+      - '.github/workflows/materialize-docs.yml'
 
 permissions:
   contents: write
@@ -16,17 +17,29 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Materialize exact workspace
+
+      - name: Reconstruct and verify workspace archive
         shell: bash
         run: |
-          cp README.md /tmp/CageDocs2-README.md
-          tar -xJf .bootstrap/CageDocs2-bootstrap.tar.xz -C .
-          cp /tmp/CageDocs2-README.md README.md
-          rm -f .bootstrap/CageDocs2-bootstrap.tar.xz
-          rmdir .bootstrap 2>/dev/null || true
+          set -euo pipefail
+          mkdir -p /tmp/cagedocs2-full
+          cat .bootstrap/chunks/*.part > /tmp/CageDocs2-bootstrap.b64
+          base64 -d /tmp/CageDocs2-bootstrap.b64 > /tmp/CageDocs2-bootstrap.tar.xz
+          echo '8c56d7bb09d07b2e26de9e1a4e4127a5861344a5b065da001c8979c915dd677b  /tmp/CageDocs2-bootstrap.tar.xz' | sha256sum -c -
+          xz -t /tmp/CageDocs2-bootstrap.tar.xz
+          tar -xJf /tmp/CageDocs2-bootstrap.tar.xz -C /tmp/cagedocs2-full
+
+      - name: Materialize exact local workspace
+        shell: bash
+        run: |
+          set -euo pipefail
+          rsync -a --delete --exclude='.git/' --exclude='.github/' /tmp/cagedocs2-full/ ./
+          rm -rf .bootstrap
+
       - name: Commit materialized workspace
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
