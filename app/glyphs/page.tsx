@@ -1,0 +1,1 @@
+export default function Glyphs(){return <main className="wide"><h1>④ CAGE Glyph Reference</h1><p>Browse the current CAGE V4 glyph vocabulary by category.</p><p><a href="/glyphs/core/">Core language</a></p><p><a href="/glyphs/strict/">Strict V4</a></p><p><a href="/glyphs/ui/">UI and editor</a></p><p><a href="/glyphs/systems/">Systems</a></p></main>}
