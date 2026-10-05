@@ -1,0 +1,71 @@
+🚨🧰
+     🔬🔐🔸
+            🔍📝*🛑🔸
+         📡📝ledger🛑🔸
+            🧮🔢1️⃣2️⃣8️⃣🔸
+            🔭📝calls🛑🔸
+🔒
+🧩📝cage.compiler.frontend.lexer🛑🔸
+📤📝🔤🛑🔸
+📤📝🧿🛑🔸
+📤📝🗺️🛑🔸
+🏁🧰
+  🎛️🔢4️⃣0️⃣0️⃣0️⃣0️⃣0️⃣🔸
+  ⏱️🔢8️⃣🔸
+  🧠🔢1️⃣2️⃣8️⃣🔸
+  🧵🔢1️⃣🔸
+
+  🛠️🔤🧰📦🦅🧬📝🔗👁️🧰➡️🧬📝🔸
+    🤔🦅🟰📝🏁🛑🧰
+      ↩️📝PROGRAM🛑🔸
+    🔒
+    🤔🦅🟰📝🛠️🛑🧰
+      ↩️📝FUNCTION🛑🔸
+    🔒
+    🤔🦅🟰📝📦🛑🧰
+      ↩️📝BINDING🛑🔸
+    🔒
+    🤔🦅🟰📝🤔🛑🧰
+      ↩️📝IF🛑🔸
+    🔒
+    🤔🦅🟰📝🔁🛑🧰
+      ↩️📝LOOP🛑🔸
+    🔒
+    🤔🦅🟰📝↩️🛑🧰
+      ↩️📝RETURN🛑🔸
+    🔒
+    🤔🦅🟰📝📞🛑🧰
+      ↩️📝CALL🛑🔸
+    🔒
+    🤔🦅🟰📝🧬🧱🛑🧰
+      ↩️📝RECORD🛑🔸
+    🔒
+    🤔🦅🟰📝🧬🎚️🛑🧰
+      ↩️📝ENUM🛑🔸
+    🔒
+    🤔🦅🟰📝☣️🛑🧰
+      ↩️📝UNSAFE🛑🔸
+    🔒
+    🤔🦅🟰📝📥🛑🧰
+      ↩️📝IMPORT🛑🔸
+    🔒
+    🤔🦅🟰📝📤🛑🧰
+      ↩️📝EXPORT🛑🔸
+    🔒
+    ↩️📝GLYPHEME🛑🔸
+  🔒
+
+  🛠️🧿🧰📦🦅🧬📝🔗👁️🧰➡️🧬✅🔸
+    🤔📞🔤📏🧰🦅🧰🟰🔢0️⃣🧰
+      ↩️❌🔸
+    🔒
+    🤔📞🔤🔎🧰🦅🔹📝�🛑🔹🔢0️⃣🧰▶️🔢0️⃣🧰
+      ↩️❌🔸
+    🔒
+    ↩️✅🔸
+  🔒
+
+  🛠️🗺️🧰🧰➡️🧬📝🔸
+    ↩️📝LEXER2|module,import,export,program,resource,failure,capability,function,let,assign,print,return,if,else,while,break,continue,call,cast,record,enum,array,slice,reference,ownership,effects,failures,typed-fault,raw-memory,thread,atomic,cellfs,cui2,network,audio,micro-vm,cagex🛑🔸
+  🔒
+🔒
