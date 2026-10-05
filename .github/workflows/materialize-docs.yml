@@ -1,0 +1,38 @@
+name: Materialize CageDocs2 workspace
+
+on:
+  push:
+    paths:
+      - '.bootstrap/CageDocs2-bootstrap.tar.xz'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.event.head_commit.message != 'Materialize full CageDocs2 workspace'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Materialize exact workspace
+        shell: bash
+        run: |
+          cp README.md /tmp/CageDocs2-README.md
+          tar -xJf .bootstrap/CageDocs2-bootstrap.tar.xz -C .
+          cp /tmp/CageDocs2-README.md README.md
+          rm -f .bootstrap/CageDocs2-bootstrap.tar.xz
+          rmdir .bootstrap 2>/dev/null || true
+      - name: Commit materialized workspace
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'Workspace already materialized.'
+            exit 0
+          fi
+          git commit -m 'Materialize full CageDocs2 workspace'
+          git push
